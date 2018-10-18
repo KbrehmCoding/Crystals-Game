@@ -43,12 +43,14 @@
 
             </div>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-                var targetNumber = Math.random();
 
+                function getRandomInt(min, max) {
+                    return Math.floor(Math.random()*(min-max+1))+min;
+                }
+
+                var targetNumber = getRandomInt(19, 120);
                 $("#number-to-guess").text(targetNumber);
                 var counter = 0;
-                var crystalNumberOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-                var randomNumberOptions = [ ]
 
                 for (var i = 0; i < numberOptions.length; i++) {
                     var imageCrystal = $("<img>");
@@ -63,6 +65,7 @@
                     crystalValue = parseInt(crystalValue);
                     counter += crystalValue;
                     alert("New score: " + counter);
+
                 if (counter === targetNumber) {
                     alert("You win!");
                 }
