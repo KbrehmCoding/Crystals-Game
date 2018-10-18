@@ -1,77 +1,78 @@
 <!DOCTYPE html>
     <html>
         <head>
+            <link rel="stylesheet" href="style.css">
             <title>CrystalCollectors</title>
         </head>
         <body>
-        <div>
-            <h1>CrystalCollectors!</h1>
-        </div>
-        <div>
-            <p>You will be given a random number at the start of the game.</p>
-            <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
-            <p>You will win the game by matching your total score to random number, you lose the game if our total score goes above the random number.</p>
-            <p>The value of each crystal is hidden from you, click on it.</p>
-            <p>Each time when the game starts the game will change the value of each crystal.</p>
-        </div>
-        <div id="randomNumber">
+            <div>
+                <h1>CrystalCollectors!</h1>
+            </div>
+            <div>
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+                <p>You will win the game by matching your total score to random number, you lose the game if our total score goes above the random number.</p>
+                <p>The value of each crystal is hidden from you, click on it.</p>
+                <p>Each time when the game starts the game will change the value of each crystal.</p>
+            </div>
+            <div id="randomNumber">
 
-        </div>
-        <div>
-            wins:
-        </div>
-        <div>
-            losses:
-        </div>
-        <div id="fourCrystals">
+            </div>
+            <div>
+                wins:
+            </div>
+            <div>
+                losses:
+            </div>
+            <div id="fourCrystals">
 
-        </div>
-        <div id="yourScore">
-            Your total score is:
-        </div>
-        <div id="your-Score">
+            </div>
+            <div id="yourScore">
+                Your total score is:
+            </div>
+            <div id="your-Score">
 
-        </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-        var targetNumber = Math.random();
+            </div>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+                var targetNumber = Math.random();
 
-        $("#number-to-guess").text(targetNumber);
+                $("#number-to-guess").text(targetNumber);
 
-        var counter = 0;
+                var counter = 0;
 
-        var numberOptions = [Math.random, Math.random, Math.random, Math.random];
+                var numberOptions = [Math.random, Math.random, Math.random, Math.random];
 
-        for (var i = 0; i < numberOptions.length; i++) {
+                for (var i = 0; i < numberOptions.length; i++) {
 
-            var imageCrystal = $("<img>");
+                    var imageCrystal = $("<img>");
 
-        imageCrystal.addClass("crystal-image");
+                imageCrystal.addClass("crystal-image");
 
-        imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg")
+                imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg")
 
-        imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+                imageCrystal.attr("data-crystalvalue", numberOptions[i]);
 
-            $("#crystals").append(imageCrystal);
-        }
+                    $("#crystals").append(imageCrystal);
+                }
 
-        $(".crystal-image").on("click", function() {
+                $(".crystal-image").on("click", function() {
 
-        var crystalValue = ($(this).attr("data-crystalvalue"));
-        crystalValue = parseInt(crystalValue);
+                var crystalValue = ($(this).attr("data-crystalvalue"));
+                crystalValue = parseInt(crystalValue);
 
-        counter += crystalValue;
+                counter += crystalValue;
 
-            alert("New score: " + counter);
+                    alert("New score: " + counter);
 
-        if (counter === targetNumber) {
-            alert("You win!");
-        }
+                if (counter === targetNumber) {
+                    alert("You win!");
+                }
 
-        else if (counter >= targetNumber) {
-            alert("You lose!!");
-        }
+                else if (counter >= targetNumber) {
+                    alert("You lose!!");
+                }
 
-        });
-    </script>
-</body>
-</html>
+                });
+            </script>
+        </body>
+    </html>
