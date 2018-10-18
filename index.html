@@ -24,40 +24,28 @@
                 <p>The value of each crystal is hidden from you, click on it.</p>
                 <p>Each time when the game starts the game will change the value of each crystal.</p>
             </div>
-            <div id="randomNumber">
-
-            </div>
-            <div>
-                wins:
-            </div>
-            <div>
-                losses:
-            </div>
-            <div id="fourCrystals">
-
-            </div>
-            <div id="yourScore">
-                Your total score is:
-            </div>
-            <div id="your-Score">
-
-            </div>
-            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-
+            <div id="randomNumber"></div>
+            <div>wins:</div>
+            <div>losses:</div>
+            <div id="crystals"></div>
+            <div id="yourScore">Your total score is:</div>
+            <div id="your-Score"></div>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script>
                 function getRandomInt(min, max) {
-                    return Math.floor(Math.random()*(min-max+1))+min;
+                    return Math.floor(Math.random() * (min - max + 1)) + min;
                 }
 
                 var targetNumber = getRandomInt(19, 120);
                 $("#number-to-guess").text(targetNumber);
                 var counter = 0;
 
-                for (var i = 0; i < numberOptions.length; i++) {
+                for (var i = 0; i < 4; i++) {
                     var imageCrystal = $("<img>");
                     imageCrystal.addClass("crystal-image");
                     imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg")
                     imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-                    imageCrystal.appendTo($("#fourCrystals"));
+                    $("#crystals").append("crystals");
                 }
 
                 $(".crystal-image").on("click", function() {
@@ -65,15 +53,12 @@
                     crystalValue = parseInt(crystalValue);
                     counter += crystalValue;
                     alert("New score: " + counter);
-
-                if (counter === targetNumber) {
-                    alert("You win!");
-                }
-                else if (counter >= targetNumber) {
-                    alert("You lose!!");
-                }
-
+                    if (counter === targetNumber) {
+                        alert("You win!");
+                    }else if (counter >= targetNumber) {
+                        alert("You lose!!");
+                    }
                 });
             </script>
-        </body>
-    </html>
+</body>
+</html>
