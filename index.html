@@ -4,6 +4,14 @@
             <link rel="stylesheet" src="style.css">
             <link rel="stylesheet" src="reset.css">
             <title>CrystalCollectors</title>
+            <style>
+                    .crystal-image {
+                        cursor: pointer;
+                        height: 100px;
+                        margin: 10px;
+                        width: 100px;
+                    }
+            </style>
         </head>
         <body>
             <div id="header">
@@ -38,37 +46,26 @@
                 var targetNumber = Math.random();
 
                 $("#number-to-guess").text(targetNumber);
-
                 var counter = 0;
-
-                var numberOptions = [Math.random, Math.random, Math.random, Math.random];
+                var crystalNumberOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+                var randomNumberOptions = [ ]
 
                 for (var i = 0; i < numberOptions.length; i++) {
-
                     var imageCrystal = $("<img>");
-
-                imageCrystal.addClass("crystal-image");
-
-                imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg")
-
-                imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-
+                    imageCrystal.addClass("crystal-image");
+                    imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg")
+                    imageCrystal.attr("data-crystalvalue", numberOptions[i]);
                     imageCrystal.appendTo($("#fourCrystals"));
                 }
 
                 $(".crystal-image").on("click", function() {
-
-                var crystalValue = ($(this).attr("data-crystalvalue"));
-                crystalValue = parseInt(crystalValue);
-
-                counter += crystalValue;
-
+                    var crystalValue = ($(this).attr("data-crystalvalue"));
+                    crystalValue = parseInt(crystalValue);
+                    counter += crystalValue;
                     alert("New score: " + counter);
-
                 if (counter === targetNumber) {
                     alert("You win!");
                 }
-
                 else if (counter >= targetNumber) {
                     alert("You lose!!");
                 }
