@@ -2,7 +2,14 @@
 var wins = 0;
 var losses = 0;
 var score = 0;
+var winsText = document.getElementById("wins-text");
+var lossesText = document.getElementById("losses-text");
+var scoreText = document.getElementById("score-text");
 
+function startNewGame() {
+    score = 0;
+    computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+}
 
 function getRandomInt(min, max) {
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -26,8 +33,8 @@ $(".crystal-image").on("click", function () {
     counter += crystalValue;
     alert("New score: " + counter);
     if (counter === targetNumber) {
-        alert("You win!");
+        wins++;
     } else if (counter >= targetNumber) {
-        alert("You lose!!");
+        losses--;
     }
 });
