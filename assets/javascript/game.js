@@ -17,7 +17,7 @@ function getRandomInt(min, max) {
 }
 
 var targetNumber = getRandomInt(19, 120);
-$("#number-to-guess").text(targetNumber);
+("#number-to-guess").text(targetNumber);
 var counter = 0;
 
 for (var i = 0; i < 4; i++) {
@@ -25,16 +25,16 @@ for (var i = 0; i < 4; i++) {
     imageCrystal.addClass("crystal-image");
     imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
     imageCrystal.attr("data-crystalvalue", getRandomInt(1, 12));
-    $("#crystals").append("crystals");
+    ("#crystals").append("crystals");
 }
 
-$(".crystal-image").on("click", function () {
+(".crystal-image").on("click", function () {
     var crystalValue = parseInt($(this).attr("data-crystalvalue"));
     counter += crystalValue;
     alert("New score: " + counter);
     if (counter === targetNumber) {
         wins++;
-    } else if (counter >= targetNumber) {
+    } else if (counter > targetNumber) {
         losses++;
     }
 });
