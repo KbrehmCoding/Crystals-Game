@@ -35,6 +35,6 @@ $(".crystal-image").on("click", function () {
     if (counter === targetNumber) {
         wins++;
     } else if (counter >= targetNumber) {
-        losses--;
+        losses++;
     }
 });
