@@ -1,3 +1,24 @@
-#header {
+p {
     background-color: pink;
+    line-height: 30px;
+    width: 500px;
+}
+
+h1 {
+    background-color: lightblue;
+    font-size: 40px;
+    width: 400px;
+}
+
+.crystal-image {
+    cursor: pointer;
+    height: 100px;
+    margin: 10px;
+    width: 100px;
+}
+
+#targetNumberContainer {
+    background-color: lightgreen;
+    width: 200px;
+    height: 30px;
 }
