@@ -32,6 +32,7 @@ function setCrystalsClickHandler() {
         score += crystalValue;
         if (score === targetNumber) {
             wins++;
+            startNewGame();
         } else if (score > targetNumber) {
             losses++;
             startNewGame();
