@@ -6,24 +6,30 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <h1>CrystalCollectors!</h1>
-    <div>
-        <p>You will be given a random number at the start of the game.</p>
-        <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
-        <p>You will win the game by matching your total score to random number, you lose the game if our total score goes above the random number.</p>
-        <p>The value of each crystal is hidden from you, click on it.</p>
-        <p>Each time when the game starts the game will change the value of each crystal.</p>
-    </div>
-    <div id="targetNumberContainer"><span id="targetNumber-text"></span></div>
-    <div id = "winslosses">
-        <div>wins: <span id="wins-text">0</span></div>
-        <br>
-        <div>losses: <span id="losses-text">0</span></div>
-    </div>
-    <div id = "crystals"></div>
-    <div id = "scoreLabel">Your total score is:</div>
+    <div id="header">CrystalCollectors!</div>
     <br>
-    <div id="yourScore"> <span id="score-text">0</span></div>
+    <div id="gameContainer">
+        <div id="innerContainer">
+            <div id="instructions">
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four crystals below. </p>
+                <p>By clicking on a crystal you will add a specific amount of points to your total score.</p>
+                <p>You will win the game by matching your total score to random number, you lose the game if our total score goes above the random number.</p>
+                <p>The value of each crystal is hidden from you, click on it.</p>
+                <p>Each time when the game starts the game will change the value of each crystal.</p>
+            </div>
+            <div id="targetNumberContainer">Target Number: <span id="targetNumber-text"></span></div>
+            <br>
+            <div id = "winslosses">
+                <div>wins: <span id="wins-text">0</span></div>
+                <br>
+                <div>losses: <span id="losses-text">0</span></div>
+            </div>
+            <div id = "crystals"></div>
+            <div id = "scoreLabel">Your total score is: <span id="score-text">0</span></div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/game.js"></script>
 </body>
